@@ -1,0 +1,28 @@
+.header-nav-controls-wrapper {
+  
+  @media (min-width: $tablet-lg-width) {
+    display: none;
+  }
+}
+.header-nav-controls-text,
+.header-callback-text{
+  display: none;
+  color: $basic-dark-blue;
+  text-transform: uppercase;
+}
+.header-nav-controls-btn span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  background-color: $basic-dark-blue;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.header-callback-controls {
+  @media (min-width: $tablet-lg-width) {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+.about-description {
+  color: $basic-white;
+}
+.about-description-item {
+  display: none;
+  
+  &--active {
+    display: block;
+  }
+}
+.about-description-item__header {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.about-description-item__text {
+  width: 300px;
+  font-size: 18px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,22 @@
+.main-page {
+  background-image: url(../img/bg/index-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about {
+  padding-top: 80px;
+}
+.about-controls {
+  @include list-reset;
+  display: flex;
+  width: 160px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bold;
+  color: $basic-grey;
+}
+.about-controls-item--active {
+  color: $basic-yellow;
+}

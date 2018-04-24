@@ -1,0 +1,40 @@
+.about-categories-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.about-categories-item {
+  color: $basic-white;
+  width: 196px;
+
+  &:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 2
+  }
+
+  &:last-of-type {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+.about-categories-item__header {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.about-categories-item__comment {
+  font-size: 18px;
+}
+.about-categories-item-slogan {
+  display: flex;
+  align-items: center;
+}
+.about-categories-item-slogan__text {
+  font-size: 14px;
+  color: $basic-yellow;
+  text-transform: uppercase;
+  margin-left: 25px;
+}

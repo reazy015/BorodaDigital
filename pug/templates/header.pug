@@ -1,0 +1,44 @@
+header.header
+    div.container.container--header-flex
+        div.header-nav-controls-wrapper
+            div.header-nav-controls-btn
+                span
+                span
+                span
+            div.header-nav-controls-text Меню
+
+        div.header-logo-wrapper
+            div.header-logo-img-wrapper
+                picture
+                    source(srcset='./img/icons/boroda-logo-white.svg', media='(min-width: 768px)')
+                    img(src='./img/icons/boroda-logo-white-mobile.svg', alt='logo-img').header-logo-img
+            p.header-logo-slogan Агентство<br>полного цикла
+
+        nav.header-nav
+            h2.header-nav__header Меню
+            ul.header-nav-list
+                li.header-nav-item
+                    a(href='#').header-nav__link Главная
+                li.header-nav-item
+                    a(href='#').header-nav__link О нас
+                li.header-nav-item
+                    a(href='#').header-nav__link Наши услуги
+                li.header-nav-item
+                    a(href='#').header-nav__link Наши работы
+                li.header-nav-item
+                    a(href='#').header-nav__link Блог
+                li.header-nav-item
+                    a(href='#').header-nav__link Контакты
+
+        div.header-contacts
+            div.header-contacts-phone 8(965) 060 05 50
+            ul.header-contacts-socials
+                li.header-contacts-socials-item vk
+                li.header-contacts-socials-item fb
+                li.header-contacts-socials-item ins
+                li.header-contacts-socials-item bh
+
+        div.header-callback-controls
+            div.header-callback-text Написать
+            div.header-callback-btn
+                img(src='./img/png-icons/send-icon.png' alt='btn-icon')
