@@ -1,0 +1,30 @@
+.scroll-controller {
+  width: 100%;
+}
+.scroll-controller-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.scroll-bar {
+  width: 90%;
+  height: 2px;
+  background-color: $scroll-bar-bg;
+}
+.scroll-bar__fill {
+  width: 30%;
+  height: 100%;
+  background-color: $basic-white;
+}
+.scroll-bar-buttons__left,
+.scroll-bar-buttons__right{
+  width: 30px;
+  height: 30px;
+  background-color: $basic-yellow;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.scroll-bar-buttons__left {
+  margin-right: 20px;
+}

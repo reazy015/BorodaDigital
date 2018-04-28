@@ -1,11 +1,26 @@
 .main-page {
-  background-image: url(../img/bg/index-bg.png);
+  position: relative;
+  height: 100vh;
+  background-image: url(../img/bg/mask-bg-design.png);
+  background-color: $basic-darken-blue;
+  background-blend-mode: overlay;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .about {
   padding-top: 80px;
+  
+  @media (min-width: $tablet-lg-width) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 300px;
+    padding-bottom: 60px;
+  }
+}
+.about-right {
+  padding-right: 105px;
 }
 .about-controls {
   @include list-reset;
@@ -16,6 +31,10 @@
   font-size: 24px;
   font-weight: bold;
   color: $basic-grey;
+
+  @media (min-width: $tablet-lg-width) {
+    margin-bottom: 100px;
+  }
 }
 .about-controls-item--active {
   color: $basic-yellow;

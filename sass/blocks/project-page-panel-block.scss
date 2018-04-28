@@ -1,0 +1,43 @@
+.projects-panel {
+  display: flex;
+  padding-bottom: 70px;
+}
+.projects-panel-types__header,
+.projects-panel-business__header{
+  color: $scroll-bar-bg;
+}
+.projects-panel-types {
+  flex: 0 0 35.5%;
+}
+.projects-panel-types-list {
+  @include list-reset;
+  display: flex;
+}
+.projects-panel-types-item input[type='radio'] {
+  display: none;
+}
+.projects-panel-types-item span,
+.projects-panel-business-item span{
+  display: block;
+  padding: 10px;
+  background-color: $basic-panel-item-bg;
+  color: $basic-white;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: background-color .3s, color .3s;
+}
+.projects-panel-types-item input[type='radio']:checked ~ span,
+.projects-panel-business-item input[type='checkbox']:checked ~ span {
+  background-color: $basic-yellow;
+  color: $basic-darken-blue;
+}
+.projects-panel-business-list {
+  @include list-reset;
+  display: flex;
+}
+.projects-panel-business-item input[type='checkbox'] {
+  display: none;
+}
+

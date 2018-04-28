@@ -6,6 +6,7 @@
 
   @media (min-width: $tablet-lg-width) {
     background-color: transparent;
+    padding-top: 45px;
   }
 }
 .header-logo-wrapper {
@@ -70,6 +71,8 @@
   @media (min-width: $tablet-lg-width) {
     display: flex;
     justify-content: space-between;
+    width: 630px;
+    margin-right: 105px;
   }
 }
 .header-nav-item {
@@ -102,6 +105,11 @@
 }
 .header-contacts-phone {
   color: $basic-white;
+
+  @media (min-width: $tablet-lg-width) {
+    font-size: 24px;
+    font-weight: bold;
+  }
 }
 .header-contacts-socials {
   @include list-reset;

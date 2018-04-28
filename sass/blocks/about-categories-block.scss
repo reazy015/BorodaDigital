@@ -1,6 +1,11 @@
 .about-categories-wrapper {
   display: grid;
   grid-template-columns: auto auto;
+
+  @media (min-width: $tablet-lg-width) {
+    grid-column-gap: 105px;
+    grid-row-gap: 90px;
+  }
 }
 .about-categories-item {
   color: $basic-white;
@@ -19,6 +24,10 @@
   &:last-of-type {
     grid-column: 2;
     grid-row: 2;
+  }
+
+  @media (min-width: $tablet-lg-width) {
+    width: 320px;
   }
 }
 .about-categories-item__header {

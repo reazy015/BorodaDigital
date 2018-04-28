@@ -2,6 +2,7 @@ doctype html
 html
     include templates/head
     body.main-page
+        include templates/callback-btn
         include templates/header
         main
             div.container
@@ -21,6 +22,8 @@ html
                             article.about-description-item
                                 h2.about-description-item__header Дизайн -
                                 p.about-description-item__text это первое из трех направлений деятельности нашей компании
+
+
 
                     div.about-right
                         div.about-categories-wrapper
@@ -47,4 +50,11 @@ html
                                     p.about-categories-item-slogan__text Сделать удобно
 
 
+                div.scroll-controller
+                    div.scroll-controller-wrapper
+                        div.scroll-bar
+                            div.scroll-bar__fill
+                        div.scroll-bar-buttons
+                            button.scroll-bar-buttons__left
+                            button.scroll-bar-buttons__right
         include templates/footer-links

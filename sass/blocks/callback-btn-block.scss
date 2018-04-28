@@ -1,0 +1,16 @@
+.callback-btn {
+  position: fixed;
+  transform: translateY(-50%) translateX(76px) rotate(-90deg);
+  right: 0;
+  top: 50%;
+  width: 184px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $basic-yellow;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
