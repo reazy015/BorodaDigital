@@ -1,14 +1,24 @@
 .header-nav-controls-wrapper {
-  
+  display: flex;
+  align-items: center;
+
   @media (min-width: $tablet-lg-width) {
     display: none;
   }
 }
 .header-nav-controls-text,
 .header-callback-text{
+  @include gotham-reg;
+  font-size: 12px;
   display: none;
   color: $basic-dark-blue;
   text-transform: uppercase;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @media (max-width: $tablet-lg-width) {
+    display: block;
+  }
 }
 .header-nav-controls-btn span {
   display: block;
@@ -22,7 +32,12 @@
   }
 }
 .header-callback-controls {
+  display: flex;
+  align-items: center;
   @media (min-width: $tablet-lg-width) {
     display: none;
   }
+}
+.nav-toggle {
+  cursor: pointer;
 }

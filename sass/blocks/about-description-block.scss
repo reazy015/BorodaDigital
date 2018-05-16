@@ -3,19 +3,26 @@
 }
 .about-description-item {
   display: none;
+  width: 420px;
+  animation-name: fadeInLeft;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-duration: .5s;
   
   &--active {
     display: block;
   }
 }
 .about-description-item__header {
+  @include gotham-black;
   margin-top: 0;
   margin-bottom: 20px;
-  font-size: 32px;
+  font-size: 48px;
   text-transform: uppercase;
 }
 .about-description-item__text {
-  width: 300px;
-  font-size: 18px;
+  @include gotham-reg;
+  font-size: 24px;
+  line-height: 1.8;
   text-transform: uppercase;
 }

@@ -1,0 +1,46 @@
+.company-about {
+  display: flex;
+  height: 100%;
+  background-image: url(../img/bg/team-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.company-about .about-right {
+  flex: 0 1 750px;
+}
+.company-about__link {
+  @include gotham-black;
+  font-size: 16px;
+  color: $basic-yellow;
+  text-decoration: none;
+  padding-right: 35px;
+}
+.company-about-team__header {
+  @include gotham-black;
+  font-size: 48px;
+  color: $basic-white;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+.company-about-team__descr {
+  @include gotham-reg;
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 1.8;
+  color: $basic-white;
+  max-width: 400px;
+}
+.company-about-gallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.company-about-gallery-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.teammate-info {
+  padding-top: 125px;
+  padding-bottom: 125px;
+}

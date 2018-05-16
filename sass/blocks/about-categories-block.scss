@@ -1,11 +1,21 @@
 .about-categories-wrapper {
+  display: none;
+  animation-name: fadeIn;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.about-categories-wrapper--active {
   display: grid;
   grid-template-columns: auto auto;
 
   @media (min-width: $tablet-lg-width) {
     grid-column-gap: 105px;
-    grid-row-gap: 90px;
+    grid-row-gap: 40px;
   }
+}
+.about-categories-wrapper--cgm {
+
 }
 .about-categories-item {
   color: $basic-white;
@@ -31,18 +41,23 @@
   }
 }
 .about-categories-item__header {
+  @include gotham-black;
   font-size: 24px;
   text-transform: uppercase;
+  margin-bottom: 18px;
 }
 .about-categories-item__comment {
-  font-size: 18px;
+  @include gotham-reg;
+  font-size: 14px;
+  margin-bottom: 35px;
 }
 .about-categories-item-slogan {
   display: flex;
   align-items: center;
 }
 .about-categories-item-slogan__text {
-  font-size: 14px;
+  @include gotham-bold;
+  font-size: 12px;
   color: $basic-yellow;
   text-transform: uppercase;
   margin-left: 25px;

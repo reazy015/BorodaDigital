@@ -1,0 +1,12 @@
+.main-section-container {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.main-section-slide {
+  flex: 0 0 100%;
+}
+.slides-wrapper {
+  display: flex;
+  transition: transform .7s;
+}

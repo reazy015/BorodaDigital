@@ -6,10 +6,18 @@
 
   &--header-flex {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    height: 100%;
+
+  &--project {
+    max-width: 840px;
+  }
 
     @media (min-width: $tablet-lg-width) {
       align-items: center;
     }
   }
+}
+.sp-page .container--project {
+  max-width: 840px;
 }

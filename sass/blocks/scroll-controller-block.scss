@@ -1,7 +1,13 @@
 .scroll-controller {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  padding-bottom: 60px;
 }
 .scroll-controller-wrapper {
+  max-width: 1380px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,9 +18,10 @@
   background-color: $scroll-bar-bg;
 }
 .scroll-bar__fill {
-  width: 30%;
+  width: 0;
   height: 100%;
   background-color: $basic-white;
+  transition: all .7s;
 }
 .scroll-bar-buttons__left,
 .scroll-bar-buttons__right{
@@ -24,6 +31,10 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 .scroll-bar-buttons__left {
   margin-right: 20px;

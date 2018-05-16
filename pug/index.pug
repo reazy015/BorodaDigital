@@ -4,57 +4,140 @@ html
     body.main-page
         include templates/callback-btn
         include templates/header
-        main
-            div.container
-                section.about
-                    div.about-left
-                        ul.about-controls
-                            li.about-controls-item.about-controls-item--active 1
-                            li.about-controls-item 2
-                            li.about-controls-item 3
-                        div.about-description
-                            article.about-description-item.about-description-item--active
-                                h2.about-description-item__header Дизайн -
-                                p.about-description-item__text это первое из трех направлений деятельности нашей компании
-                            article.about-description-item
-                                h2.about-description-item__header Дизайн -
-                                p.about-description-item__text это первое из трех направлений деятельности нашей компании
-                            article.about-description-item
-                                h2.about-description-item__header Дизайн -
-                                p.about-description-item__text это первое из трех направлений деятельности нашей компании
-
-
-
-                    div.about-right
-                        div.about-categories-wrapper
-                            article.about-categories-item
-                                h2.about-categories-item__header UI/UX
-                                p.about-categories-item__comment Дизайн интерфейсов
-                                div.about-categories-item-slogan
-                                    div.about-categories-item-img-wrapper
-                                        img(src='./img/png-icons/comfort-icon.png', alt='ui-icon').about-categories-item__img
-                                    p.about-categories-item-slogan__text Сделать удобно
-                            article.about-categories-item
-                                h2.about-categories-item__header WEB - дизайн
-                                p.about-categories-item__comment Дизайн сайтов и мобильных приложений
-                                div.about-categories-item-slogan
-                                    div.about-categories-item-img-wrapper
-                                        img(src='./img/png-icons/available-icon.png', alt='ui-icon').about-categories-item__img
-                                    p.about-categories-item-slogan__text Сделать удобно
-                            article.about-categories-item
-                                h2.about-categories-item__header Брендинг
-                                p.about-categories-item__comment Логотипы, фирменный стиль
-                                div.about-categories-item-slogan
-                                    div.about-categories-item-img-wrapper
-                                        img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
-                                    p.about-categories-item-slogan__text Сделать удобно
-
-
-                div.scroll-controller
-                    div.scroll-controller-wrapper
-                        div.scroll-bar
-                            div.scroll-bar__fill
-                        div.scroll-bar-buttons
-                            button.scroll-bar-buttons__left
-                            button.scroll-bar-buttons__right
+        main.main-section-container
+            div.slides-wrapper
+                section.about.main-section-slide
+                    div.about-wrapper
+                        div.about-left
+                            ul.about-controls
+                                li.about-controls-item.js-about-control.about-controls-item--active 1
+                                li.about-controls-item.js-about-control 2
+                                li.about-controls-item.js-about-control 3
+                            div.about-description
+                                article.about-description-item.js-about-description-item.about-description-item--active
+                                    h2.about-description-item__header Дизайн -
+                                    p.about-description-item__text это первое из трех направлений деятельности нашей компании
+                                article.about-description-item.js-about-description-item
+                                    h2.about-description-item__header Маркетинг -
+                                    p.about-description-item__text это второе из трех направлений деятельности нашей компании
+                                article.about-description-item.js-about-description-item
+                                    h2.about-description-item__header Разработка -
+                                    p.about-description-item__text это третье из трех направлений деятельности нашей компании
+                        div.about-right
+                            div.about-categories-wrapper.js-category-item.about-categories-wrapper--active
+                                article.about-categories-item
+                                    h2.about-categories-item__header UI/UX
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/comfort-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать удобно
+                                article.about-categories-item
+                                    h2.about-categories-item__header WEB - дизайн
+                                    p.about-categories-item__comment Дизайн сайтов и мобильных приложений
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/available-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать доступно
+                                article.about-categories-item
+                                    h2.about-categories-item__header Брендинг
+                                    p.about-categories-item__comment Логотипы, фирменный стиль
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                            div.about-categories-wrapper.js-category-item.about-categories-wrapper--cgm
+                                article.about-categories-item
+                                    h2.about-categories-item__header Контекстная
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/comfort-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать удобно
+                                article.about-categories-item
+                                    h2.about-categories-item__header Оффлайн
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/available-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать доступно
+                                article.about-categories-item
+                                    h2.about-categories-item__header Таргетинг
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                                article.about-categories-item
+                                    h2.about-categories-item__header На транспорте
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                                article.about-categories-item
+                                    h2.about-categories-item__header SMM
+                                    p.about-categories-item__comment Дизайн сайтов и мобильных приложений
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                                article.about-categories-item
+                                    h2.about-categories-item__header CEO
+                                    p.about-categories-item__comment Логотипы, фирменный стиль
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                            div.about-categories-wrapper.js-category-item.about-categories-wrapper--cgm
+                                article.about-categories-item
+                                    h2.about-categories-item__header Контекстная
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/comfort-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать удобно
+                                article.about-categories-item
+                                    h2.about-categories-item__header Оффлайн
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/available-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать доступно
+                                article.about-categories-item
+                                    h2.about-categories-item__header Таргетинг
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                                article.about-categories-item
+                                    h2.about-categories-item__header На транспорте
+                                    p.about-categories-item__comment Дизайн интерфейсов
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                                article.about-categories-item
+                                    h2.about-categories-item__header SMM
+                                    p.about-categories-item__comment Дизайн сайтов и мобильных приложений
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                                article.about-categories-item
+                                    h2.about-categories-item__header CEO
+                                    p.about-categories-item__comment Логотипы, фирменный стиль
+                                    div.about-categories-item-slogan
+                                        div.about-categories-item-img-wrapper
+                                            img(src='./img/png-icons/beauty-icon.png', alt='ui-icon').about-categories-item__img
+                                        p.about-categories-item-slogan__text Сделать красиво
+                include templates/company-info
+        div.scroll-controller
+            div.scroll-controller-wrapper
+                div.scroll-bar
+                    div.scroll-bar__fill
+                div.scroll-bar-buttons
+                    button.scroll-bar-buttons__left
+                    button.scroll-bar-buttons__right
         include templates/footer-links

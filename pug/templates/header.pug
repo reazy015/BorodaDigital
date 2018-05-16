@@ -1,13 +1,13 @@
 header.header
     div.container.container--header-flex
-        div.header-nav-controls-wrapper
+        div.header-nav-controls-wrapper.nav-toggle
             div.header-nav-controls-btn
                 span
                 span
                 span
             div.header-nav-controls-text Меню
 
-        div.header-logo-wrapper
+        a(href='index.html').header-logo-wrapper
             div.header-logo-img-wrapper
                 picture
                     source(srcset='./img/icons/boroda-logo-white.svg', media='(min-width: 768px)')
@@ -18,7 +18,7 @@ header.header
             h2.header-nav__header Меню
             ul.header-nav-list
                 li.header-nav-item
-                    a(href='#').header-nav__link Главная
+                    a(href='#').header-nav__link.header-nav__link--active Главная
                 li.header-nav-item
                     a(href='#').header-nav__link О нас
                 li.header-nav-item
@@ -38,7 +38,7 @@ header.header
                 li.header-contacts-socials-item ins
                 li.header-contacts-socials-item bh
 
-        div.header-callback-controls
+        div.header-callback-controls.callback-toggle
             div.header-callback-text Написать
             div.header-callback-btn
                 img(src='./img/png-icons/send-icon.png' alt='btn-icon')

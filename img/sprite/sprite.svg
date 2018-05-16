@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="boroda-logo-white" viewbox="0 0 256 155">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="boroda-logo-white-mobile" viewbox="0 0 100 155">
+
+<path class="st0" d="M16.2,108.3L0,117.1V108l16.2-9.5l12.5,7V36.5l-12.5-6.9v-9.8l32.4,17.8v0.2v9.6v69.1l17.2,9.6l16.2-9.3V87.5
+	L59.2,75v-9.8l42.4,23.2v0.1l0.3,0v16.9v7.4v3.1L65.8,136L16.2,108.3z M48.6,17.8L16.2,0v9.8l32.4,17.8V17.8z M65.9,145.2
+	l-49.6-27.7L0.1,127v9.2l16.2-8.9L65.9,155l36.1-20.1v-10.5L65.9,145.2z"/>
+</symbol><symbol id="boroda-logo-white" viewbox="0 0 256 155">
 
 <path class="st0" d="M16.2,108.3L0,117.1V108l16.2-9.5l12.5,7V36.5l-12.5-6.9v-9.8l32.4,17.8v0.2v9.6v69.1l17.2,9.6l16.2-9.3V87.5
 	L59.2,75v-9.8l42.4,23.2v0.1l0.3,0v16.9v7.4v3.1L65.8,136L16.2,108.3z M48.6,17.8L16.2,0v9.8l32.4,17.8V17.8z M65.9,145.2
@@ -72,4 +77,8 @@
 	<path class="st0" d="M198.7,136.4c-1.2,0-2-0.3-2.5-0.7c-0.5-0.5-0.7-1.2-0.7-2.2v-12.6l1.9-0.3v12.6c0,0.3,0,0.6,0.1,0.8
 		c0.1,0.2,0.1,0.4,0.3,0.5c0.1,0.1,0.3,0.2,0.5,0.3c0.2,0.1,0.5,0.1,0.7,0.2L198.7,136.4z"/>
 </g>
+</symbol><symbol id="svg-rec-test" viewbox="0 0 240 336">
+<symbol id="Canvas" fill="none">
+<rect id="Rectangle 6.27" x="1" y="1" width="238" height="334" rx="1" stroke="#3F51B5" stroke-width="2" stroke-linecap="square" stroke-dasharray="12 12"/>
+</symbol>
 </symbol></svg>

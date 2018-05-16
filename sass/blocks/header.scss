@@ -1,8 +1,12 @@
 .header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: $basic-yellow;
+  z-index: 80;
 
   @media (min-width: $tablet-lg-width) {
     background-color: transparent;
@@ -12,6 +16,7 @@
 .header-logo-wrapper {
   margin-left: auto;
   margin-right: auto;
+  text-decoration: none;
 
   @media (min-width: $tablet-lg-width) {
     margin-left: 0;
@@ -25,12 +30,15 @@
   }
 }
 .header-logo-slogan {
+  @include gotham-reg;
+  font-size: 12px;
+  color: $logo-slogan;
+  padding-top: 15px;
   display: none;
   
   @media (min-width: $tablet-lg-width) {
     display: block;
     margin: 0;
-    color: $basic-white;
   }
 }
 .header-logo-img {
@@ -51,8 +59,10 @@
   @media (min-width: $tablet-lg-width) {
     position: static;
     display: block;
+    visibility: visible;
     flex: 0 1 615px;
     height: auto;
+    padding-bottom: 20px;
     background-color: transparent;
   }
 }
@@ -87,14 +97,17 @@
   }
 }
 .header-nav__link {
+  @include gotham-reg;
   @include link-reset;
-  text-transform: uppercase;
-  font-weight: bold;
+  font-size: 14px;
   color: $basic-dark-blue;
 
   @media (min-width: $tablet-lg-width) {
     color: $basic-white;
   }
+}
+.header-nav__link--active {
+  color: $basic-yellow;
 }
 .header-contacts {
   display: none;
@@ -104,6 +117,7 @@
   }
 }
 .header-contacts-phone {
+  @include gotham-black;
   color: $basic-white;
 
   @media (min-width: $tablet-lg-width) {

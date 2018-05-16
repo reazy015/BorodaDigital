@@ -6,3 +6,12 @@
 @mixin link-reset {
   text-decoration: none;
 }
+@mixin gotham-reg{
+  font-family: 'GotamPro Reg', 'Arial', sans-serif;
+}
+@mixin gotham-bold {
+  font-family: 'GotamPro Bold', 'Arial', sans-serif;
+}
+@mixin gotham-black {
+  font-family: 'GotamPro Black', 'Arial', sans-serif;
+}
