@@ -49,12 +49,12 @@ window.pageSlider = ( function() {
   }
 
   function scrollBarBtnOnClickHandle(index) {
-    deleteAboutActiveClasses();
-    setActiveItemsByIndex(index);
-    fillScrollBar(index);
-
-    if (initialSlideCount >= 2) {
-      startSlideBlocks = true;
+    if (index < 3) {
+      deleteAboutActiveClasses();
+      setActiveItemsByIndex(index);
+      fillScrollBar(index);
+    } else {
+      return false;
     }
   }
 
@@ -63,13 +63,70 @@ window.pageSlider = ( function() {
     slidesWrapper.style.transform = 'translate(-' + blockIndex +'00%)';
   }
 
+  function scrollOnWheel(e) {
+    var delta = e.deltaY || e.detail || e.wheelDelta;
+
+    if (delta > 0) {
+
+      if (startSlideBlocks) {
+        initialSlideCount++;
+        slidesWrapper.style.transform = 'translate(-100%)';
+        fillScrollBar(initialSlideCount);
+      }
+
+      if (initialSlideCount && initialSlideCount < 2) {
+        initialSlideCount++;
+        scrollBarBtnOnClickHandle(initialSlideCount);
+    }
+
+      if (!initialSlideCount) {
+        initialSlideCount++;
+        scrollBarBtnOnClickHandle(initialSlideCount);
+      }
+
+      console.log(startSlideBlocks);
+
+    } else {
+
+      if (!startSlideBlocks) {
+        initialSlideCount--;
+        scrollBarBtnOnClickHandle(initialSlideCount);
+        console.log(startSlideBlocks);
+      }
+
+      if (startSlideBlocks) {
+        initialSlideCount--;
+        slidesWrapper.style.transform = 'translate(0%)';
+        fillScrollBar(initialSlideCount);
+
+        if (initialSlideCount <= 2) {
+          startSlideBlocks = false;
+        }
+
+      }
+    }
+
+    if (initialSlideCount >= 2) {
+      startSlideBlocks = true;
+    } else {
+      startSlideBlocks = false;
+    }
+
+    scrollBarBtnOnClickHandle(initialSlideCount);
+  }
+
+
+  var scrollOnWheelDebounce = _.debounce(scrollOnWheel, 200);
+
   for (var i = 0; i < currentAboutListsLength; i++) {
     aboutControlsBtnList[i].addEventListener('click', aboutControlOnClickHandler);
   }
 
   mainSliderRightBtn.addEventListener('click', function() {
     if (startSlideBlocks) {
+      initialSlideCount++;
       slidesWrapper.style.transform = 'translate(-100%)';
+      fillScrollBar(initialSlideCount);
     }
 
     if (initialSlideCount && initialSlideCount < 2) {
@@ -81,37 +138,36 @@ window.pageSlider = ( function() {
       initialSlideCount++;
       scrollBarBtnOnClickHandle(initialSlideCount);
     }
+
+    if (initialSlideCount >= 2) {
+      startSlideBlocks = true;
+    } else {
+      startSlideBlocks = false;
+    }
   });
 
   mainSliderLeftBtn.addEventListener('click', function() {
-    if (initialSlideCount && initialSlideCount <= 3) {
+    if (!startSlideBlocks) {
       initialSlideCount--;
       scrollBarBtnOnClickHandle(initialSlideCount);
+      console.log(startSlideBlocks);
     }
 
-    console.log(initialSlideCount, initialBlockSlideCount);
+    if (startSlideBlocks) {
+      initialSlideCount--;
+      slidesWrapper.style.transform = 'translate(0%)';
+      fillScrollBar(initialSlideCount);
+
+      if (initialSlideCount >= 2) {
+        startSlideBlocks = true;
+      } else {
+        startSlideBlocks = false;
+      }
+    }
   });
 
   window.addEventListener('wheel', function(e) {
-    var delta = e.deltaY || e.detail || e.wheelDelta;
-
-    if (delta > 0) {
-      if (initialSlideCount && initialSlideCount < 2) {
-        initialSlideCount++;
-        scrollBarBtnOnClickHandle(initialSlideCount);
-      }
-
-      if (!initialSlideCount) {
-        initialSlideCount++;
-        scrollBarBtnOnClickHandle(initialSlideCount);
-      }
-    } else {
-      if (initialSlideCount && initialSlideCount < 3) {
-        initialSlideCount--;
-        scrollBarBtnOnClickHandle(initialSlideCount);
-      }
-
-    }
-  })
+    scrollOnWheelDebounce(e);
+  });
 
 })();

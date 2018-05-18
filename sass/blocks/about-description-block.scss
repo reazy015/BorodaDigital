@@ -4,10 +4,10 @@
 .about-description-item {
   display: none;
   width: 420px;
-  animation-name: fadeInLeft;
+  animation-name: bounceInLeft;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
-  animation-duration: .5s;
+  animation-duration: .7s;
   
   &--active {
     display: block;
