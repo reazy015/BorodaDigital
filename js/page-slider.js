@@ -38,7 +38,7 @@ window.pageSlider = ( function() {
   function setActiveItemsByIndex(index) {
     aboutDescriptionsList[index].classList.add('about-description-item--active');
     aboutCategoriesList[index].classList.add('about-categories-wrapper--active');
-    aboutControlsBtnList[index].classList.add('about-controls-item--active')
+    aboutControlsBtnList[index].classList.add('about-controls-item--active');
   }
 
   function aboutControlOnClickHandler(evt) {
@@ -102,7 +102,6 @@ window.pageSlider = ( function() {
         if (initialSlideCount <= 2) {
           startSlideBlocks = false;
         }
-
       }
     }
 
