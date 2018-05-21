@@ -41,6 +41,50 @@
   background-position: center center;
 }
 .teammate-info {
+  position: relative;
   padding-top: 125px;
-  padding-bottom: 125px;
+  padding-bottom: 25px;
+  cursor: pointer;
+
+  &:hover:before {
+    background-color: rgba(1, 1, 1, 0.2);
+  }
+
+  &:hover > .teammate-info__name {
+    color: $basic-white;
+  }
+
+  &:hover > .teammate-info__pos {
+    color: $basic-yellow;
+  }
+}
+.teammate-info:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 10;
+  transition: background-color .3s;
+}
+.teammate-info__name {
+  @include gotham-black;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  color: transparent;
+  transition: .3s;
+
+}
+.teammate-info__pos {
+  @include gotham-reg;
+  margin-bottom: 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 14px;
+  color: transparent;
+  transition: .3s;
 }

@@ -65,6 +65,13 @@
     padding-bottom: 20px;
     background-color: transparent;
   }
+  
+  &--open {
+    display: block;
+    animation: bounceInLeft;
+    animation-duration: .4s;
+
+  }
 }
 .header-nav__header {
   margin-top: 50px;
