@@ -124,7 +124,7 @@ window.pageSlider = ( function() {
       console.log(startX);
       console.log(deltaX);
 
-      if (Math.abs(deltaX) >= 100) {
+      if (Math.abs(deltaX) >= 250) {
 
 
         if (deltaX > 0) {

@@ -74,6 +74,8 @@
   }
 }
 .header-nav__header {
+  @include gotham-black;
+  font-size: 48px;
   margin-top: 50px;
   margin-bottom: 55px;
   text-transform: uppercase;
@@ -106,15 +108,18 @@
 .header-nav__link {
   @include gotham-reg;
   @include link-reset;
-  font-size: 14px;
+  font-size: 28px;
   color: $basic-dark-blue;
 
   @media (min-width: $tablet-lg-width) {
     color: $basic-white;
+    font-size: 14px;
   }
 }
 .header-nav__link--active {
-  color: $basic-yellow;
+  @media (min-width: $tablet-lg-width) {
+    color: $basic-yellow;
+  }
 }
 .header-contacts {
   display: none;
