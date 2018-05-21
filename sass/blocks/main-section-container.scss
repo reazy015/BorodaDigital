@@ -1,12 +1,13 @@
 .main-section-container {
   height: 100vh;
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .main-section-slide {
   flex: 0 0 100%;
 }
 .slides-wrapper {
+  max-width: 100%;
   display: flex;
   flex: 1;
   transition: transform .7s;

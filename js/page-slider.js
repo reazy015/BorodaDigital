@@ -114,8 +114,55 @@ window.pageSlider = ( function() {
     scrollBarBtnOnClickHandle(initialSlideCount);
   }
 
+  function onTouchSwipe(evt) {
+    var startX = null;
+    var deltaX = null;
+    var startX = evt.targetTouches[0].pageX;
+
+    this.addEventListener('touchmove', function(evt) {
+      deltaX = evt.targetTouches[0].pageX - startX;
+      console.log(startX);
+      console.log(deltaX);
+
+      if (Math.abs(deltaX) >= 100) {
+
+
+        if (deltaX > 0) {
+
+          if (startSlideBlocks) {
+            initialSlideCount++;
+            slidesWrapper.style.transform = 'translate(-100%)';
+            fillScrollBar(initialSlideCount);
+          }
+
+          if (initialSlideCount && initialSlideCount < 2) {
+            initialSlideCount++;
+            scrollBarBtnOnClickHandle(initialSlideCount);
+          }
+
+          if (!initialSlideCount) {
+            initialSlideCount++;
+            scrollBarBtnOnClickHandle(initialSlideCount);
+          }
+
+          if (initialSlideCount >= 2) {
+            startSlideBlocks = true;
+          } else {
+            startSlideBlocks = false;
+          }
+
+        } else {
+          console.log('left');
+        }
+      }
+
+      evt.preventDefault();
+      evt.stopPropagation();
+    }, false);
+  }
 
   var scrollOnWheelDebounce = _.debounce(scrollOnWheel, 200);
+  var onTouchSwipeDebounce = _.debounce(onTouchSwipe, 200);
 
   for (var i = 0; i < currentAboutListsLength; i++) {
     aboutControlsBtnList[i].addEventListener('click', aboutControlOnClickHandler);
@@ -124,7 +171,8 @@ window.pageSlider = ( function() {
   mainSliderRightBtn.addEventListener('click', function() {
     if (startSlideBlocks) {
       initialSlideCount++;
-      slidesWrapper.style.transform = 'translate(-100%)';
+      initialBlockSlideCount++;
+      slidesWrapper.style.transform = 'translate(-' + initialBlockSlideCount + '00%)';
       fillScrollBar(initialSlideCount);
     }
 
@@ -154,7 +202,8 @@ window.pageSlider = ( function() {
 
     if (startSlideBlocks) {
       initialSlideCount--;
-      slidesWrapper.style.transform = 'translate(0%)';
+      initialBlockSlideCount--;
+      slidesWrapper.style.transform = 'translate(-' + initialBlockSlideCount + '0%)';
       fillScrollBar(initialSlideCount);
 
       if (initialSlideCount >= 2) {
@@ -168,5 +217,7 @@ window.pageSlider = ( function() {
   window.addEventListener('wheel', function(e) {
     scrollOnWheelDebounce(e);
   });
+
+  slidesWrapper.addEventListener('touchstart', onTouchSwipeDebounce);
 
 })();

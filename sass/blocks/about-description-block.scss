@@ -19,10 +19,18 @@
   margin-bottom: 20px;
   font-size: 48px;
   text-transform: uppercase;
+
+  @media (max-width: 460px) {
+    font-size: 32px;
+  }
 }
 .about-description-item__text {
   @include gotham-reg;
   font-size: 24px;
   line-height: 1.8;
   text-transform: uppercase;
+
+  @media (max-width: 460px) {
+    font-size: 18px;
+  }
 }

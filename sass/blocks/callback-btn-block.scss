@@ -13,4 +13,8 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
+  
+  @media (max-width: 460px) {
+    display: none;
+  }
 }

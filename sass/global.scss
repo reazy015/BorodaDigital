@@ -9,6 +9,10 @@
     align-items: flex-start;
     height: 100%;
 
+    @media (max-width: 460px) {
+      align-items: center;
+    }
+
   &--project {
     max-width: 840px;
   }

@@ -13,16 +13,18 @@
   background-size: cover;
 }
 .about-wrapper {
-  flex: 0 1 1380px;
+  flex: 1 1 auto;
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 100px;
   margin: 0 auto;
 
   @media (min-width: $tablet-lg-width) {
     display: flex;
+    flex: 0 1 1380px;
     align-items: flex-end;
     justify-content: space-between;
-    padding-bottom: 223px;
+    padding-bottom: 150px;
   }
 }
 .about-controls {
