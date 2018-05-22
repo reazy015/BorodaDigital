@@ -1,0 +1,57 @@
+.callback-form-block {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 560px;
+  padding: 70px;
+  background-color: $basic-yellow;
+  z-index: 100;
+  animation: slideInRight .3s;
+
+  &--open {
+    display: block;
+  }
+}
+.callback-form__header {
+  @include gotham-black;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+.callback-form__comment {
+  @include gotham-reg;
+  font-size: 16px;
+  line-height: 1.6;
+  width: 340px;
+  padding-bottom: 120px;
+}
+.callback-form__input {
+  @include gotham-reg;
+  font-size: 12px;
+  color: #000;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+.callback-form__input::placeholder {
+  color: #000;
+}
+.callback-form__submit {
+  position: relative;
+  @include gotham-black;
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  width: 420px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  bottom: 0;
+}

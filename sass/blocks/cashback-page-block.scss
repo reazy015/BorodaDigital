@@ -1,8 +1,19 @@
 .cashback-block {
+  width: 100vw;
   display: flex;
   height: 100%;
   background-image: url(../img/bg/cashback-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.cashback-block .about-wrapper {
+  @media (max-width: 460px) {
+    width: 100vw;
+  }
+}
+.cashback-block .about-left {
+  @media (max-width: 460px) {
+    width: 100vw;
+  }
 }

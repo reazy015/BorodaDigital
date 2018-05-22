@@ -15,4 +15,9 @@
   display: flex;
   flex: 1;
   transition: transform .7s;
+
+  @media (max-width: 460px) {
+    max-width: inherit;
+    width: 100vw;
+  }
 }

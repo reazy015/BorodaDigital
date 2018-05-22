@@ -13,8 +13,45 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
+  z-index: 90;
+  overflow: hidden;
+  transition: right .3s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--open {
+    right: 560px;
+  }
+
   
   @media (max-width: 460px) {
     display: none;
   }
 }
+//.callback-btn__mask {
+//  display: block;
+//  position: absolute;
+//  top: 0; left: 0; right: 0; bottom: 0;
+//  background: white;
+//  transform: translateX(-100%) rotate(45deg);
+//  transition: all 0.3s;
+//  animation-name: fx-mask;
+//  animation-duration: 7s;
+//  animation-iteration-count: infinite;
+//  animation-timing-function: ease-in-out;
+//  animation-fill-mode: none;
+//}
+//@keyframes fx-mask {
+//  0%{
+//    opacity: 1;
+//    transform: translateX(-100%) rotate(45deg);
+//  }
+//  5%{
+//    transform: translateX(100%) rotate(45deg);
+//  }
+//  95% {
+//    transform: translateX(-100%) rotate(45deg);
+//  }
+//}

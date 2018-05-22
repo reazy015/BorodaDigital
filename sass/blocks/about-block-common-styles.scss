@@ -18,8 +18,10 @@
   padding-right: 10px;
   padding-top: 100px;
   margin: 0 auto;
+  width: 100vw;
 
   @media (min-width: $tablet-lg-width) {
+    width: auto;
     display: flex;
     flex: 0 1 1380px;
     align-items: flex-end;
