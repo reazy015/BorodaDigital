@@ -70,6 +70,7 @@
     display: block;
     animation: bounceInLeft;
     animation-duration: .4s;
+    animation-fill-mode: both;
 
   }
 }
