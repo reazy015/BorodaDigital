@@ -2,6 +2,10 @@
   height: 100vh;
   display: flex;
   overflow-x: hidden;
+
+  @media (max-width: 460px) {
+    height: auto;
+  }
 }
 .main-section-slide {
   flex: 0 0 100%;

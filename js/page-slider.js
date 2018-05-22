@@ -1,117 +1,109 @@
 'use strict';
 
 window.pageSlider = ( function() {
-  var aboutDescriptionsList = document.querySelectorAll('.js-about-description-item');
-  var aboutCategoriesList = document.querySelectorAll('.js-category-item');
-  var aboutControlsBtnList = document.querySelectorAll('.js-about-control');
-  var mainSliderScrollBar = document.querySelector('.scroll-bar');
-  var mainSliderScrollBarFill = mainSliderScrollBar.querySelector('.scroll-bar__fill');
-  var mainSliderRightBtn = document.querySelector('.scroll-bar-buttons__right');
-  var mainSliderLeftBtn = document.querySelector('.scroll-bar-buttons__left');
-  var slidesWrapper = document.querySelector('.slides-wrapper');
-  var currentAboutListsLength = 3;
-  var initialSlideCount = 0;
-  var initialBlockSlideCount = 0;
-  var totalSlideAmount = 7;
-  var startSlideBlocks = false;
+  var mainSlidesWrapper = document.querySelector('.slides-wrapper');
+  var sliderForwardBtn = document.querySelector('.scroll-bar-buttons__right');
+  var sliderBackwardBtn = document.querySelector('.scroll-bar-buttons__left');
+  var aboutArticlesList = mainSlidesWrapper.querySelectorAll('.js-about-description-item');
+  var aboutCategoriesList = mainSlidesWrapper.querySelectorAll('.js-category-item');
+  var aboutControlsList = mainSlidesWrapper.querySelectorAll('.js-about-control');
+  var sliderState = {
+    slidesAmount: document.querySelectorAll('.main-section-slide'),
+    startSectionSliding: false,
+    totalSlidingCounter: 0,
+    sectionSlidingCounter: 0
+  };
 
   function getListIndex(list, item) {
     return Array.prototype.indexOf.call(list, item);
   }
 
-  function fillScrollBar(number) {
-    initialSlideCount = number;
-    var currentScrollBarWidth = mainSliderScrollBar.offsetWidth;
-    var currentSlideDivision = ((currentScrollBarWidth / totalSlideAmount)/currentScrollBarWidth) * 100;
-    var additionalWidth = currentSlideDivision * number;
-    mainSliderScrollBarFill.style.width = additionalWidth + '%';
-  }
-
-  function deleteAboutActiveClasses() {
-    for (var i = 0; i < currentAboutListsLength; i++) {
-      aboutDescriptionsList[i].classList.remove('about-description-item--active');
+  function disableAllActiveCategories() {
+    for (var i = 0; i < aboutArticlesList.length; i++) {
+      aboutArticlesList[i].classList.remove('about-description-item--active');
       aboutCategoriesList[i].classList.remove('about-categories-wrapper--active');
-      aboutControlsBtnList[i].classList.remove('about-controls-item--active')
+      aboutControlsList[i].classList.remove('about-controls-item--active')
     }
   }
 
-  function setActiveItemsByIndex(index) {
-    aboutDescriptionsList[index].classList.add('about-description-item--active');
+  function activateCategoriesByIndex(index) {
+    aboutArticlesList[index].classList.add('about-description-item--active');
     aboutCategoriesList[index].classList.add('about-categories-wrapper--active');
-    aboutControlsBtnList[index].classList.add('about-controls-item--active');
+    aboutControlsList[index].classList.add('about-controls-item--active');
   }
 
-  function aboutControlOnClickHandler(evt) {
-    var index = getListIndex(aboutControlsBtnList, evt.target);
-    deleteAboutActiveClasses();
-    setActiveItemsByIndex(index);
-    fillScrollBar(index);
-  }
-
-  function scrollBarBtnOnClickHandle(index) {
-    if (index < 3) {
-      deleteAboutActiveClasses();
-      setActiveItemsByIndex(index);
-      fillScrollBar(index);
+  function checkReadyToSectionSlide() {
+    if (getListIndex(aboutControlsList, document.querySelector('.about-controls-item--active')) === 2) {
+      sliderState.startSectionSliding = true;
     } else {
-      return false;
+      sliderState.startSectionSliding = false;
     }
   }
 
-  function scrollMainWrapperBlocks(scrollIndex, blockIndex) {
-    fillScrollBar(scrollIndex);
-    slidesWrapper.style.transform = 'translate(-' + blockIndex +'00%)';
+  function checkReadyToArticlesSlide(index) {
+    if (index === 0) {
+      sliderState.startSectionSliding = false;
+    }
+  }
+
+  function slideSection(index) {
+    if (index >= 0) {
+      mainSlidesWrapper.style.transform = 'translate(-' + index + '00%)';
+    } else {
+
+    }
+  }
+
+  function onAboutControlsHandleClick(target) {
+    var targetIndex = getListIndex(aboutControlsList, target);
+    sliderState.totalSlidingCounter = targetIndex;
+    disableAllActiveCategories();
+    activateCategoriesByIndex(targetIndex);
+    checkReadyToSectionSlide();
+  }
+
+  function onForwardBtnHandleClick() {
+    if (sliderState.startSectionSliding) {
+      var index = ++sliderState.sectionSlidingCounter;
+      slideSection(index);
+    } else {
+      var index = ++sliderState.totalSlidingCounter;
+      disableAllActiveCategories();
+      activateCategoriesByIndex(index);
+      checkReadyToSectionSlide();
+    }
+
+    console.log(sliderState.startSectionSliding);
+  }
+
+  function onBackwardBtnHandleClick() {
+    if (sliderState.startSectionSliding) {
+      var index = --sliderState.sectionSlidingCounter;
+      slideSection(index);
+      checkReadyToArticlesSlide(index)
+    } else {
+      var index = --sliderState.totalSlidingCounter;
+
+      if (index >= 0) {
+        disableAllActiveCategories();
+        activateCategoriesByIndex(index);
+        checkReadyToSectionSlide();
+      } else {
+        sliderState.totalSlidingCounter = 0;
+      }
+    }
+
+    console.log(sliderState.startSectionSliding);
   }
 
   function scrollOnWheel(e) {
     var delta = e.deltaY || e.detail || e.wheelDelta;
 
-    if (delta > 0) {
-
-      if (startSlideBlocks) {
-        initialSlideCount++;
-        slidesWrapper.style.transform = 'translate(-100%)';
-        fillScrollBar(initialSlideCount);
-      }
-
-      if (initialSlideCount && initialSlideCount < 2) {
-        initialSlideCount++;
-        scrollBarBtnOnClickHandle(initialSlideCount);
-    }
-
-      if (!initialSlideCount) {
-        initialSlideCount++;
-        scrollBarBtnOnClickHandle(initialSlideCount);
-      }
-
-      console.log(startSlideBlocks);
-
+    if (delta > 0  && window.innerWidth > 1024) {
+      onForwardBtnHandleClick();
     } else {
-
-      if (!startSlideBlocks) {
-        initialSlideCount--;
-        scrollBarBtnOnClickHandle(initialSlideCount);
-        console.log(startSlideBlocks);
-      }
-
-      if (startSlideBlocks) {
-        initialSlideCount--;
-        slidesWrapper.style.transform = 'translate(0%)';
-        fillScrollBar(initialSlideCount);
-
-        if (initialSlideCount <= 2) {
-          startSlideBlocks = false;
-        }
-      }
+      onBackwardBtnHandleClick();
     }
-
-    if (initialSlideCount >= 2) {
-      startSlideBlocks = true;
-    } else {
-      startSlideBlocks = false;
-    }
-
-    scrollBarBtnOnClickHandle(initialSlideCount);
   }
 
   function onTouchSwipe(evt) {
@@ -121,103 +113,41 @@ window.pageSlider = ( function() {
 
     this.addEventListener('touchmove', function(evt) {
       deltaX = evt.targetTouches[0].pageX - startX;
-      console.log(startX);
-      console.log(deltaX);
 
-      if (Math.abs(deltaX) >= 250) {
-
+      if (Math.abs(deltaX) >= 150) {
 
         if (deltaX > 0) {
-
-          if (startSlideBlocks) {
-            initialSlideCount++;
-            slidesWrapper.style.transform = 'translate(-100%)';
-            fillScrollBar(initialSlideCount);
-          }
-
-          if (initialSlideCount && initialSlideCount < 2) {
-            initialSlideCount++;
-            scrollBarBtnOnClickHandle(initialSlideCount);
-          }
-
-          if (!initialSlideCount) {
-            initialSlideCount++;
-            scrollBarBtnOnClickHandle(initialSlideCount);
-          }
-
-          if (initialSlideCount >= 2) {
-            startSlideBlocks = true;
-          } else {
-            startSlideBlocks = false;
-          }
-
+          onForwardBtnHandleClick();
         } else {
-          console.log('left');
+          onBackwardBtnHandleClick();
         }
       }
-
-      evt.preventDefault();
-      evt.stopPropagation();
     }, false);
   }
 
-  var scrollOnWheelDebounce = _.debounce(scrollOnWheel, 200);
-  var onTouchSwipeDebounce = _.debounce(onTouchSwipe, 200);
 
-  for (var i = 0; i < currentAboutListsLength; i++) {
-    aboutControlsBtnList[i].addEventListener('click', aboutControlOnClickHandler);
+  //Debounce
+
+  var scrollOnWheelDebounce = _.debounce(scrollOnWheel, 200);
+
+  //EventListeners
+
+  for (var i = 0; i < aboutControlsList.length; i++) {
+    aboutControlsList[i].addEventListener('click', function(evt) {
+      var target = evt.target;
+      onAboutControlsHandleClick(target);
+      console.log(sliderState.startSectionSliding);
+    })
   }
 
-  mainSliderRightBtn.addEventListener('click', function() {
-    if (startSlideBlocks) {
-      initialSlideCount++;
-      initialBlockSlideCount++;
-      slidesWrapper.style.transform = 'translate(-' + initialBlockSlideCount + '00%)';
-      fillScrollBar(initialSlideCount);
-    }
+  sliderForwardBtn.addEventListener('click', onForwardBtnHandleClick);
 
-    if (initialSlideCount && initialSlideCount < 2) {
-      initialSlideCount++;
-      scrollBarBtnOnClickHandle(initialSlideCount);
-    }
-
-    if (!initialSlideCount) {
-      initialSlideCount++;
-      scrollBarBtnOnClickHandle(initialSlideCount);
-    }
-
-    if (initialSlideCount >= 2) {
-      startSlideBlocks = true;
-    } else {
-      startSlideBlocks = false;
-    }
-  });
-
-  mainSliderLeftBtn.addEventListener('click', function() {
-    if (!startSlideBlocks) {
-      initialSlideCount--;
-      scrollBarBtnOnClickHandle(initialSlideCount);
-      console.log(startSlideBlocks);
-    }
-
-    if (startSlideBlocks) {
-      initialSlideCount--;
-      initialBlockSlideCount--;
-      slidesWrapper.style.transform = 'translate(-' + initialBlockSlideCount + '0%)';
-      fillScrollBar(initialSlideCount);
-
-      if (initialSlideCount >= 2) {
-        startSlideBlocks = true;
-      } else {
-        startSlideBlocks = false;
-      }
-    }
-  });
+  sliderBackwardBtn.addEventListener('click', onBackwardBtnHandleClick);
 
   window.addEventListener('wheel', function(e) {
     scrollOnWheelDebounce(e);
   });
 
-  slidesWrapper.addEventListener('touchstart', onTouchSwipeDebounce);
+  mainSlidesWrapper.addEventListener('touchstart', onTouchSwipe);
 
 })();

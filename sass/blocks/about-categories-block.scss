@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: 175px 175px;
   grid-column-gap: 15px;
+  grid-row-gap: 10px;
 
   @media (min-width: $tablet-lg-width) {
     grid-column-gap: 105px;
@@ -21,6 +22,8 @@
 
 }
 .about-categories-item {
+  display: flex;
+  flex-direction: column;
   color: $basic-white;
   width: 196px;
 
@@ -51,10 +54,12 @@
 
   @media (max-width: 460px) {
     font-size: 18px;
+    margin-bottom: 0;
   }
 }
 .about-categories-item__comment {
   @include gotham-reg;
+  flex: 1;
   font-size: 14px;
   margin-bottom: 35px;
 }
