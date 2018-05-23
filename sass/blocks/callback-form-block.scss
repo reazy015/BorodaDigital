@@ -7,8 +7,18 @@
   width: 560px;
   padding: 70px;
   background-color: $basic-yellow;
-  z-index: 100;
+  z-index: 80;
   animation: slideInRight .3s;
+
+  @media (max-width: 1024px) {
+    top: 35.19px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 15px;
+    top: 68.25px;
+  }
 
   &--open {
     display: block;
@@ -25,6 +35,10 @@
   line-height: 1.6;
   width: 340px;
   padding-bottom: 120px;
+
+  @media (max-width: 743px) {
+    padding-bottom: 25px;
+  }
 }
 .callback-form__input {
   @include gotham-reg;
@@ -42,7 +56,6 @@
   color: #000;
 }
 .callback-form__submit {
-  position: relative;
   @include gotham-black;
   font-size: 16px;
   padding-top: 15px;
@@ -53,5 +66,10 @@
   background-color: #000;
   color: #fff;
   border: none;
-  bottom: 0;
+  margin-top: 175px;
+
+  @media (max-width: 743px) {
+    margin-top: 50px;
+    width: 100%;
+  }
 }

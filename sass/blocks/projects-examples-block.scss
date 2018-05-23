@@ -10,37 +10,87 @@
     grid-column-gap: 45px;
     grid-row-gap: 20px;
   }
+
+  @media (max-width: 743px) {
+    display: block;
+  }
 }
 .projects-examples-item {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   text-align: center;
   cursor: pointer;
+  padding-top: 78px;
+  padding-bottom: 58px;
 
-  &:hover > .project-info-wrapper {
-    visibility: visible;
+  @media (max-width: 743px) {
+    margin-bottom: 15px;
+  }
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transition: background-color .4s;
+    z-index: 10;
+  }
+
+  & > * {
+    position: relative;
+    opacity: 0;
+    transition: opacity .4s;
+    z-index: 20;
+  }
+
+  &:hover:before {
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color .4s;
+  }
+
+  &:hover > * {
+    opacity: 1;
+    transition: opacity .4s;
   }
 }
-.project-info-wrapper {
-  padding-top: 80px;
-  padding-bottom: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: $basic-white;
-  visibility: hidden;
-}
 .project__header {
+  @include gotham-black;
+  font-size: 24px;
+  color: $basic-white;
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
 }
-.project__props span:not(.project-decor-sep) {
+.project__props span:not(.project-decor-sep){
+  @include gotham-bold;
+  font-size: 11px;
   text-transform: uppercase;
   color: $basic-yellow;
   font-weight: bold;
 }
+.project__type {
+  @include gotham-reg;
+  font-size: 16px;
+  color: $basic-white;
+}
 .project-decor-sep {
+  @include gotham-bold;
+  font-size: 11px;
+  color: $basic-white;
   padding-left: 6px;
   padding-right: 6px;
+}
+.project__year {
+  @include gotham-bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $basic-white;
   font-weight: bold;
+
 }

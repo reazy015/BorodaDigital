@@ -34,6 +34,8 @@
 .header-callback-controls {
   display: flex;
   align-items: center;
+  cursor: pointer;
+  z-index: 100;
   @media (min-width: $tablet-lg-width) {
     display: none;
   }

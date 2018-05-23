@@ -1,13 +1,14 @@
 .projects-panel {
   display: flex;
   padding-bottom: 70px;
-}
-.projects-panel-types__header,
-.projects-panel-business__header{
-  color: $scroll-bar-bg;
+  
+  @media (max-width: 960px) {
+    display: block;
+  }
 }
 .projects-panel-types {
   flex: 0 0 35.5%;
+  margin-bottom: 15px;
 }
 .projects-panel-types-list {
   @include list-reset;
@@ -36,8 +37,20 @@
 .projects-panel-business-list {
   @include list-reset;
   display: flex;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 }
 .projects-panel-business-item input[type='checkbox'] {
   display: none;
+}
+.projects-panel-business-item {
+  @media (max-width: 743px) {
+    margin-bottom: 10px;
+  }
+}
+.sp-page .header {
+  position: static;
 }
 

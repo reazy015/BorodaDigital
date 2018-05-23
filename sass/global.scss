@@ -1,3 +1,6 @@
+*:focus {
+  outline: none;
+}
 .container {
   max-width: 1380px;
   margin: auto;
@@ -25,6 +28,9 @@
 .sp-page .container--project {
   max-width: 840px;
 }
-.ui-loader {
+.ui-loader,
+.ui-checkboxradio-icon-space,
+.ui-checkboxradio-icon {
   display: none!important;
 }
+
