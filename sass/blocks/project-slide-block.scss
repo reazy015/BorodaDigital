@@ -9,9 +9,17 @@
 .project-mockup-wrapper {
   max-width: 80%;
 
+  @media (max-height: 960px) {
+    text-align: center;
+  }
+
   & > img {
     max-width: 100%;
     height: auto;
+
+    @media (max-height: 960px) {
+      max-width: 80%;
+    }
   }
 }
 .project-block .company-about-team__header {

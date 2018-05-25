@@ -1,6 +1,6 @@
 .main-page {
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 .about {
   display: flex;
@@ -26,7 +26,7 @@
     flex: 0 1 1380px;
     align-items: flex-end;
     justify-content: space-between;
-    padding-bottom: 150px;
+    padding-bottom: 120px;
   }
 }
 .about-controls {
@@ -40,7 +40,7 @@
   color: $basic-grey;
 
   @media (min-width: $tablet-lg-width) {
-    margin-bottom: 100px;
+    margin-bottom: 55px;
   }
 }
 .about-controls-item {

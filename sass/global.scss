@@ -33,4 +33,12 @@
 .ui-checkboxradio-icon {
   display: none!important;
 }
+body {
+  @media (max-height: 900px) {
+    zoom: 0.9;
+  }
+}
+html, body, main {
+  height: 100%;
+}
 

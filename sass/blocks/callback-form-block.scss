@@ -20,9 +20,22 @@
     top: 68.25px;
   }
 
-  &--open {
-    display: block;
+  @media (max-height: 860px) {
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
+
+  &--open {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.callback-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
 .callback-form__header {
   @include gotham-black;
@@ -34,7 +47,8 @@
   font-size: 16px;
   line-height: 1.6;
   width: 340px;
-  padding-bottom: 120px;
+  flex: 0 1 15%;
+
 
   @media (max-width: 743px) {
     padding-bottom: 25px;
@@ -66,7 +80,6 @@
   background-color: #000;
   color: #fff;
   border: none;
-  margin-top: 175px;
 
   @media (max-width: 743px) {
     margin-top: 50px;

@@ -13,7 +13,7 @@
 
   @media (min-width: $tablet-lg-width) {
     grid-column-gap: 105px;
-    grid-row-gap: 40px;
+    grid-row-gap: 25px;
     grid-template-columns: auto auto;
 
   }
@@ -48,9 +48,10 @@
 }
 .about-categories-item__header {
   @include gotham-black;
-  font-size: 24px;
+  font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 18px;
+  margin-top: 0;
 
   @media (max-width: 460px) {
     font-size: 18px;
@@ -61,7 +62,7 @@
   @include gotham-reg;
   flex: 1;
   font-size: 14px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 .about-categories-item-slogan {
   display: flex;
