@@ -14,9 +14,7 @@
   @include list-reset;
   display: flex;
 }
-.projects-panel-types-item input[type='radio'] {
-  display: none;
-}
+
 .projects-panel-types-item span,
 .projects-panel-business-item span{
   display: block;
@@ -42,7 +40,10 @@
     flex-wrap: wrap;
   }
 }
-.projects-panel-business-item input[type='checkbox'] {
+.projects-panel-business-item input[type='radio'] {
+  display: none;
+}
+.projects-panel-types-item input[type='radio'] {
   display: none;
 }
 .projects-panel-business-item {

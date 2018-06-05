@@ -3,14 +3,14 @@
 }
 .container {
   max-width: 1380px;
-  margin: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin: auto;  
 
   &--header-flex {
     display: flex;
     align-items: flex-start;
     height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 
     @media (max-width: 460px) {
       align-items: center;
@@ -34,8 +34,10 @@
   display: none!important;
 }
 body {
-  @media (max-height: 900px) {
+  @media (max-height: 800px) {
     zoom: 0.9;
+    -ms-zoom: 0.9;
+    -webkit-zoom: 0.9;
   }
 }
 html, body, main {
